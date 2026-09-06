@@ -1,29 +1,14 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#fff3fa">
-<meta name="description" content="para alissa">
-<title>para alissa</title>
-<style>
-html,body{margin:0;width:100%;min-height:100%;background:#faf9ef}body{overflow-x:hidden}.frame{position:fixed;inset:0;width:100%;height:100%;border:0;background:#faf9ef}.hidden{display:none}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#faf9ef">
+  <meta name="description" content="para alissa">
+  <title>para alissa</title>
+  <style>html,body{margin:0;width:100%;min-height:100%;background:#faf9ef}body{overflow:hidden}.frame{position:fixed;inset:0;width:100%;height:100%;border:0;background:#faf9ef}</style>
 </head>
 <body>
-<iframe id="entry-frame" class="frame" src="entrada-especial/index.html" title="Uma data especial"></iframe>
-<iframe id="story-frame" class="frame hidden" src="entrada-especial/memories.html" title="Nossa história"></iframe>
-<script>
-const entry=document.getElementById('entry-frame');
-const story=document.getElementById('story-frame');
-function openStory(){entry.classList.add('hidden');story.classList.remove('hidden');window.scrollTo(0,0);}
-entry.addEventListener('load',()=>{
-  try{
-    const doc=entry.contentDocument;
-    const button=doc.querySelector('#open-book');
-    if(button) button.addEventListener('click',openStory,{once:true});
-  }catch(e){console.error(e)}
-});
-</script>
+  <iframe class="frame" src="entrada-especial/index.html" title="Para Alissa"></iframe>
 </body>
 </html>
