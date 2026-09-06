@@ -39,7 +39,7 @@ body { min-height: 100%; overflow-x: hidden; background: var(--mobile-cream); }
 /* Pedido final */
 .proposal-page { display: grid; place-items: center; background: var(--mobile-cream); text-align: center; }
 .proposal-inner { width: min(88%, 410px); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px 12px; }
-.proposal-kicker { margin: 0 0 15px; color: #cf8aa9; font: 700 .68rem/1 var(--sans, Arial); letter-spacing: .2em; text-transform: uppercase; }
+.proposal-kicker { margin: 0 0 15px; color: #927a72; font: 700 .68rem/1 var(--sans, Arial); letter-spacing: .2em; text-transform: uppercase; }
 .proposal-title { margin: 0 auto; color: var(--mobile-wine); font: 500 clamp(2rem, 9.5vw, 3.3rem)/1.08 'Playfair Display', Georgia, serif; }
 .proposal-copy { max-width: 300px; margin: 20px auto 0; color: #744c4c; font: italic clamp(.84rem, 3.8vw, 1.05rem)/1.45 'Playfair Display', Georgia, serif; }
 .proposal-actions { position: relative; min-height: 120px; margin-top: 28px; display: flex; align-items: center; justify-content: center; gap: 14px; }
@@ -62,4 +62,85 @@ body { min-height: 100%; overflow-x: hidden; background: var(--mobile-cream); }
 @media (prefers-reduced-motion: reduce) {
   .memory-book { scroll-behavior: auto; }
   .celebration-piece { animation: none; display: none; }
+}
+
+/* Contraste final: nenhuma frase fica solta sobre uma foto ou fundo claro. */
+:root {
+  --mobile-cream: #faf9ef;
+  --mobile-wine: #720b0b;
+  --mobile-navy: #062753;
+  --mobile-red: #8f1116;
+  --mobile-blush: #eee9dc;
+}
+
+.memory-page .overlay-note,
+.memory-page .red-note,
+.memory-page .grid-message,
+.memory-page .you-me-copy,
+.memory-page .anniversary-copy,
+.memory-page .date-note {
+  padding: .55rem .72rem;
+  border-left: 3px solid var(--mobile-red);
+  color: #fff;
+  background: rgba(6, 39, 83, .92);
+  border-radius: 2px;
+  text-shadow: none;
+  box-shadow: 0 7px 16px rgba(0,0,0,.16);
+}
+
+.memory-page .overlay-note { max-width: 48%; }
+.memory-page .red-note {
+  top: 45%;
+  right: 6%;
+  bottom: auto;
+  width: 43%;
+  background: var(--mobile-navy);
+}
+.memory-page .grid-message {
+  top: 43%;
+  width: 78%;
+  background: var(--mobile-wine);
+}
+.memory-page .you-me-copy { left: 8%; max-width: 40%; background: var(--mobile-navy); }
+.memory-page .anniversary-copy {
+  background: rgba(6, 39, 83, .86);
+  border-left: 0;
+  border-top: 3px solid var(--mobile-red);
+}
+.memory-page .date-note { background: var(--mobile-wine); }
+.memory-page .favorite-card {
+  color: #fff;
+  background: var(--mobile-navy);
+  border-left: 3px solid var(--mobile-red);
+  box-shadow: 0 7px 16px rgba(0,0,0,.16);
+}
+
+.page-love-you .final-note {
+  padding: .28rem .45rem;
+  color: var(--mobile-wine);
+  background: rgba(250,249,239,.9);
+}
+
+.proposal-page { background: var(--mobile-cream); }
+.proposal-actions { flex-direction: column; min-height: 155px; gap: 12px; }
+.proposal-yes { background: var(--mobile-wine); box-shadow: 0 10px 22px rgba(114,11,11,.2); }
+.proposal-no {
+  position: relative;
+  left: auto;
+  top: auto;
+  transform: none;
+  color: var(--mobile-wine);
+  background: var(--mobile-blush);
+  border-color: #d8c9bd;
+}
+.proposal-page.accepted .proposal-yes { background: var(--mobile-wine); }
+
+@media (max-width: 360px) {
+  .memory-page .overlay-note,
+  .memory-page .red-note,
+  .memory-page .grid-message,
+  .memory-page .you-me-copy,
+  .memory-page .anniversary-copy,
+  .memory-page .date-note { padding: .45rem .55rem; }
+  .memory-page .red-note { width: 46%; }
 }

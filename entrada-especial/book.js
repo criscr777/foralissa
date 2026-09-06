@@ -25,6 +25,7 @@ if (proposal) {
     const nextY = 25 + Math.random() * Math.max(1, maxY - 25);
     noScale = Math.max(.52, noScale - .1);
     yesScale = Math.min(1.28, yesScale + .06);
+    noButton.style.position = 'absolute';
     noButton.style.left = `${nextX}px`;
     noButton.style.top = `${nextY}px`;
     noButton.style.transform = `translate(-50%, -50%) scale(${noScale})`;
