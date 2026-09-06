@@ -3,32 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#8b0000">
+<meta name="theme-color" content="#fff3fa">
 <meta name="description" content="para alissa — uma história em vinte páginas">
 <title>para alissa</title>
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div class="grain" aria-hidden="true"></div>
-<div id="lock" class="lock-screen">
-  <div class="lock-shell">
-    <div class="lock-title">
-      <p class="lock-kicker">ENTRE A SENHA</p>
-      <h1>uma data que<br><em>eu nunca vou esquecer.</em></h1>
-    </div>
-    <div class="lock-photo-frame"><div class="photo ph-capa"></div></div>
-    <div class="lock-form">
-      <div id="pin" class="pin" aria-label="Senha digitada"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
-      <div class="keypad" aria-label="Teclado numérico">
-        <button type="button" data-key="1">1</button><button type="button" data-key="2">2</button><button type="button" data-key="3">3</button>
-        <button type="button" data-key="4">4</button><button type="button" data-key="5">5</button><button type="button" data-key="6">6</button>
-        <button type="button" data-key="7">7</button><button type="button" data-key="8">8</button><button type="button" data-key="9">9</button>
-        <button type="button" data-key="back">‹</button><button type="button" data-key="0">0</button><button type="button" data-key="clear">×</button>
-      </div>
-      <p class="lock-hint">uma data especial para nós</p>
-      <p id="error" class="password-error" aria-live="polite"></p>
-    </div>
-  </div>
+<div id="entry-screen" aria-label="Entrada do site">
+  <iframe id="entry-frame" src="entrada-especial/index.html" title="Uma data especial"></iframe>
 </div>
 <main id="book" hidden></main>
 <script src="script.js"></script>
