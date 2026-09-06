@@ -7,18 +7,13 @@
 <meta name="description" content="para alissa — uma história em vinte páginas">
 <title>para alissa</title>
 <link rel="stylesheet" href="styles.css">
-<style>
-  #entry-screen{position:fixed;inset:0;z-index:200;background:#fff;transition:opacity .55s ease,visibility .55s ease}
-  #entry-screen.leaving{opacity:0;visibility:hidden;pointer-events:none}
-  #entry-frame{display:block;width:100%;height:100%;border:0}
-</style>
+<style>#entry-screen{position:fixed;inset:0;z-index:200;background:#fff;transition:opacity .55s ease,visibility .55s ease}#entry-screen.leaving{opacity:0;visibility:hidden;pointer-events:none}#entry-frame{display:block;width:100%;height:100%;border:0}</style>
 </head>
 <body>
-<div id="entry-screen" aria-label="Entrada do site">
-  <iframe id="entry-frame" src="entrada-especial/index.html" title="Uma data especial"></iframe>
-</div>
+<div id="entry-screen" aria-label="Entrada do site"><iframe id="entry-frame" src="entrada-especial/index.html" title="Uma data especial"></iframe></div>
 <main id="book" hidden></main>
 <script src="story.js"></script>
 <script src="video-enhance.js"></script>
+<script>window.addEventListener('message',e=>{if(e.data&&e.data.type==='FORALISSA_DATE_CONFIRMED'){const entry=document.getElementById('entry-screen');entry.classList.add('leaving');setTimeout(()=>{entry.remove();const book=document.getElementById('book');book.hidden=false;window.scrollTo(0,0);},550);}});</script>
 </body>
 </html>
