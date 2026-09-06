@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#fff3fa" />
+    <title>Uma data especial</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <section class="hero" aria-labelledby="page-title">
+        <p class="eyebrow">uma surpresa para você</p>
+        <h1 id="page-title">My Pinterest is<br />being weird btw]</h1>
+      </section>
+
+      <section class="date-card" aria-labelledby="date-title">
+        <div class="card-content">
+          <h2 id="date-title">Enter the Special Date</h2>
+          <p class="date-hint">DD MM YYYY</p>
+
+          <div class="date-display" aria-label="Data digitada" aria-live="polite">
+            <span class="heart-mark" aria-hidden="true">♥</span>
+            <div class="date-slots" id="date-slots"></div>
+          </div>
+          <p class="status" id="status" role="status">Digite uma data para continuar</p>
+
+          <div class="keypad" aria-label="Teclado numérico">
+            <button class="key" type="button" data-key="1">1</button>
+            <button class="key" type="button" data-key="2">2</button>
+            <button class="key" type="button" data-key="3">3</button>
+            <button class="key" type="button" data-key="4">4</button>
+            <button class="key" type="button" data-key="5">5</button>
+            <button class="key" type="button" data-key="6">6</button>
+            <button class="key" type="button" data-key="7">7</button>
+            <button class="key" type="button" data-key="8">8</button>
+            <button class="key" type="button" data-key="9">9</button>
+            <span class="key-spacer" aria-hidden="true"></span>
+            <button class="key" type="button" data-key="0">0</button>
+            <button class="key key-backspace" type="button" data-action="backspace" aria-label="Apagar último número">←</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div class="success-toast" id="success-toast" role="alert" aria-hidden="true">
+      <span aria-hidden="true">💌</span>
+      <span>Data confirmada!</span>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
