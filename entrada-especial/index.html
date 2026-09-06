@@ -6,6 +6,13 @@
     <meta name="theme-color" content="#fff3fa" />
     <title>Uma data especial</title>
     <link rel="stylesheet" href="styles.css" />
+    <style>
+      #proceed-button{display:none;width:100%;margin-top:18px;padding:14px 20px;border:0;border-radius:999px;background:#c62d69;color:#fff;font:700 15px 'DM Sans',Arial,sans-serif;cursor:pointer;box-shadow:0 10px 24px rgba(198,45,105,.2);transition:transform .15s ease,background .15s ease}
+      #proceed-button.visible{display:block;animation:proceedIn .35s ease both}
+      #proceed-button:active{transform:scale(.98)}
+      #proceed-button:hover{background:#b7215c}
+      @keyframes proceedIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+    </style>
   </head>
   <body>
     <main class="page-shell">
@@ -39,6 +46,8 @@
             <button class="key" type="button" data-key="0">0</button>
             <button class="key key-backspace" type="button" data-action="backspace" aria-label="Apagar último número">←</button>
           </div>
+
+          <button id="proceed-button" type="button" aria-hidden="true">prosseguir</button>
         </div>
       </section>
     </main>
