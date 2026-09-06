@@ -1,0 +1,65 @@
+/* Camada final de acabamento: mobile-first, sem alterar a composição do template. */
+:root { --mobile-cream: #faf9ef; --mobile-wine: #720b0b; --mobile-navy: #062753; }
+
+html { min-height: 100%; background: var(--mobile-cream); overscroll-behavior-y: none; }
+body { min-height: 100%; overflow-x: hidden; background: var(--mobile-cream); }
+.memory-book { width: min(100%, 480px); height: 100svh; margin: 0 auto; overflow-x: hidden; overflow-y: auto; scroll-snap-type: y mandatory; scroll-behavior: smooth; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+.memory-book::-webkit-scrollbar { display: none; }
+.memory-page { width: 100%; height: 100svh; min-height: 100svh; scroll-snap-align: start; scroll-snap-stop: always; isolation: isolate; }
+.paper-content { min-height: 100%; padding-top: max(22px, env(safe-area-inset-top)); padding-right: clamp(16px, 5vw, 22px); padding-bottom: max(34px, env(safe-area-inset-bottom)); padding-left: clamp(16px, 5vw, 22px); }
+.page-number { z-index: 7; font-size: .62rem !important; }
+.mini-caption { bottom: max(14px, env(safe-area-inset-bottom)); font-size: .48rem; }
+
+/* Texto: legível sem destruir o espaço de cada colagem. */
+.memory-page .tiny-quote { max-width: 88%; font-size: clamp(1rem, 4.55vw, 1.28rem); line-height: 1.4; }
+.memory-page .photo-label { font-size: clamp(.58rem, 2vw, .7rem); }
+.memory-page .about-layout { padding-top: 11%; padding-bottom: 24%; }
+.memory-page .about-copy { width: min(88%, 390px); max-height: 79%; display: flex; flex-direction: column; justify-content: center; }
+.memory-page .about-copy h2 { margin-bottom: 12px; font-size: clamp(1.25rem, 6vw, 1.75rem); line-height: 1.1; }
+.memory-page .about-copy p { margin: 0 0 10px; font-size: clamp(.68rem, 2.65vw, .84rem); line-height: 1.42; }
+.memory-page .overlay-note, .memory-page .red-note, .memory-page .grid-message, .memory-page .you-me-copy, .memory-page .anniversary-copy, .memory-page .date-note, .memory-page .favorite-card, .memory-page .final-note { font-size: clamp(.82rem, 3.8vw, 1.13rem); line-height: 1.3; }
+.memory-page .overlay-note, .memory-page .red-note { font-size: clamp(.88rem, 4vw, 1.18rem); }
+.memory-page .letter-card { top: 14%; left: 10%; width: 80%; height: 66%; padding: 16px 14px; }
+.memory-page .letter-card h2 { margin-bottom: 12px; font-size: clamp(1.05rem, 5vw, 1.45rem); }
+.memory-page .letter-card p { margin-bottom: 8px; font-size: clamp(.63rem, 2.5vw, .78rem); line-height: 1.38; }
+.memory-page .anniversary-copy { right: 10%; bottom: max(12%, 66px) !important; width: 78%; font-size: clamp(.72rem, 3vw, .94rem); }
+.memory-page .date-note { bottom: max(14%, 78px) !important; font-size: clamp(.72rem, 3vw, .94rem); }
+.memory-page .favorite-card { top: 39%; left: 13%; max-width: 66%; font-size: clamp(.82rem, 3.8vw, 1.12rem); }
+.memory-page .grid-message { top: 45%; left: 50%; width: 76%; transform: translateX(-50%); text-align: center; }
+.memory-page .you-me-copy { max-width: 47%; font-size: clamp(.78rem, 3.5vw, 1.05rem); }
+.memory-page .final-note { font-size: clamp(.7rem, 3vw, .9rem); }
+
+/* Mantém os elementos grandes do template dentro de telas estreitas. */
+.page-home .home-title { left: 12%; font-size: clamp(3.8rem, 19vw, 5.8rem); }
+.page-home .photo-home { left: 14%; width: 60%; height: 27%; }
+.page-memories .memory-title { top: 44%; max-width: 58%; font-size: clamp(1.75rem, 8vw, 2.2rem); }
+.page-kisses .kiss { font-size: clamp(2.1rem, 11vw, 3rem); }
+.page-love-you .love-word { font-size: clamp(3.4rem, 18vw, 5.8rem); }
+
+/* Pedido final */
+.proposal-page { display: grid; place-items: center; background: var(--mobile-cream); text-align: center; }
+.proposal-inner { width: min(88%, 410px); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px 12px; }
+.proposal-kicker { margin: 0 0 15px; color: #cf8aa9; font: 700 .68rem/1 var(--sans, Arial); letter-spacing: .2em; text-transform: uppercase; }
+.proposal-title { margin: 0 auto; color: var(--mobile-wine); font: 500 clamp(2rem, 9.5vw, 3.3rem)/1.08 'Playfair Display', Georgia, serif; }
+.proposal-copy { max-width: 300px; margin: 20px auto 0; color: #744c4c; font: italic clamp(.84rem, 3.8vw, 1.05rem)/1.45 'Playfair Display', Georgia, serif; }
+.proposal-actions { position: relative; min-height: 120px; margin-top: 28px; display: flex; align-items: center; justify-content: center; gap: 14px; }
+.proposal-btn { min-width: 112px; padding: 13px 19px; border: 0; border-radius: 999px; cursor: pointer; font: 800 .84rem/1 var(--sans, Arial); touch-action: manipulation; transition: transform .2s ease, left .2s ease, top .2s ease; }
+.proposal-yes { z-index: 2; color: #fff; background: #c62d69; box-shadow: 0 10px 22px rgba(198,45,105,.2); }
+.proposal-no { position: absolute; z-index: 3; left: calc(50% + 69px); top: 50%; color: #a92059; background: #fce4f2; border: 1px solid #edc5db; transform: translate(-50%, -50%); }
+.proposal-result { display: none; margin: 24px 0 0; color: var(--mobile-wine); font: italic 1rem/1.4 'Playfair Display', Georgia, serif; }
+.proposal-page.accepted .proposal-actions { display: none; }
+.proposal-page.accepted .proposal-result { display: block; }
+.celebration-piece { position: fixed; z-index: 20; top: -30px; pointer-events: none; color: #c62d69; font: 1.4rem/1 'Playfair Display', Georgia, serif; animation: fall linear forwards; }
+@keyframes fall { from { opacity: 1; transform: translate3d(0,-30px,0) rotate(0); } to { opacity: 0; transform: translate3d(var(--drift),110vh,0) rotate(var(--spin)); } }
+
+@media (max-width: 360px) {
+  .memory-page .about-copy p { font-size: .66rem; line-height: 1.34; margin-bottom: 8px; }
+  .memory-page .letter-card { padding: 13px 11px; }
+  .memory-page .letter-card p { font-size: .61rem; }
+  .page-home .photo-home { height: 24%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .memory-book { scroll-behavior: auto; }
+  .celebration-piece { animation: none; display: none; }
+}

@@ -1,33 +1,47 @@
 # Para Alissa
 
-Site romântico em formato de história vertical, pensado primeiro para celular e inspirado nos templates enviados.
+Site romântico mobile-first, inspirado no template enviado: 16 páginas visuais em formato de livro, cada uma ocupando a tela inteira e avançando com rolagem vertical `scroll-snap`, seguidas de uma página final de pedido de namoro.
 
-## Como colocar suas fotos
+## Fluxo
 
-Crie a pasta `assets/images/` e coloque estes arquivos:
+1. Abra a raiz do site.
+2. Digite a data secreta configurada em `entrada-especial/script.js` (`19072026` por padrão).
+3. Toque em **abrir nossa história**.
+4. Deslize para baixo para passar pelas páginas.
+5. Na última tela, responda ao pedido de namoro.
 
-- `foto-capa.jpg` — foto da tela da senha
-- `foto-01.jpg` — início da história
-- `foto-02.jpg`, `foto-03.jpg`, `foto-04.jpg` — galeria
-- `foto-05.jpg`, `foto-06.jpg`, `foto-07.jpg` — colagem
-- `foto-08.jpg` — foto grande
-- `foto-final.jpg` — foto antes do pedido
-- `foto-success.jpg` — foto da última página
+## Trocar as fotos
 
-Os arquivos podem ser `.png` ou `.webp`, mas nesse caso altere a extensão correspondente em `script.js`.
+As páginas ficam em `entrada-especial/memories.html`. Cada imagem possui um `src` visível e comentável no código. Substitua a URL por um arquivo seu, por exemplo:
 
-## Vídeo
+```html
+<img src="../assets/images/foto-01.jpg" alt="Descrição da foto" />
+```
 
-Crie `assets/videos/` e adicione `video-01.mp4`. A página 8 está preparada para receber a cena em vídeo; para ativar a reprodução do arquivo, substitua o bloco `.video` dessa página por um elemento `<video controls playsinline src="assets/videos/video-01.mp4"></video>`.
+O diretório `assets/images/` já está preparado. As imagens atuais são placeholders remotos para que o layout continue visível antes de você inserir as fotos reais.
 
-## Música
+## Trocar a data secreta
 
-Crie `assets/music/` e coloque `nossa-musica.mp3`. O botão da página 9 controla a reprodução.
+Edite apenas esta linha em `entrada-especial/script.js`:
 
-## Senha
+```js
+const SPECIAL_DATE = '19072026';
+```
 
-A senha inicial é `19/07/2026`. A validação aceita também `19072026`.
+## Rodar localmente
 
-## Personalização
+```bash
+python3 -m http.server 4173
+```
 
-Os textos das 20 páginas ficam no array `pages` de `script.js`, então é fácil trocar frases, datas e legendas sem alterar o layout.
+Depois abra `http://localhost:4173`.
+
+## Arquivos principais
+
+- `entrada-especial/index.html` — entrada e teclado da data
+- `entrada-especial/entry.css` — visual mobile da entrada
+- `entrada-especial/script.js` — validação e desbloqueio
+- `entrada-especial/memories.html` — as 16 páginas visuais e o pedido final
+- `entrada-especial/styles.css` — composição original do template
+- `entrada-especial/book-polish.css` — ajustes finais de legibilidade e responsividade
+- `entrada-especial/book.js` — animação de entrada das páginas e resposta do pedido
